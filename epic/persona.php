@@ -23,8 +23,8 @@
 						<td>Male</td>
 					</tr>
 					<tr>
-						<td>Need</td>
-						<td>Allergy-Free</td>
+						<td>Needs</td>
+						<td>Hypo-allergenic</td>
 					</tr>
 					<tr>
 						<td>Items</td>
