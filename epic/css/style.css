@@ -1,9 +1,12 @@
 /*CSS File*/
 body {background-color: powderblue;}
 h1   {color: darkslategrey;}
-h2   {color: darkcyan}
+h2   {color: #008b8b
+}
 p    {color: darkcyan;}
 table, th, tr, td {
 	border: 2px solid darkslategrey;
 }
+
+
 
