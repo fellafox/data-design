@@ -8,7 +8,7 @@
 			body {background-color: powderblue;}
 			h1   {color: blue;}
 			p    {color: red;}
-			table, tr, td {
+			table, th, tr, td {
 				border: 2px solid;
 			}
 		</style>
@@ -18,8 +18,8 @@
 		<main>
 			<p>⦁	32 year old man who has allergies and needs natural shaving products, soaps, and natural clothing and watches. Likes kraft beer.
 			</p>
-			<h2>Stats</h2>
 			<table>
+				<thead>Stats</thead>
 					<tr>
 						<td>Age</td>
 						<td>32</td>
