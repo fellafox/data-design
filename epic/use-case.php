@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Use-Case</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css"/>
 	</head>
 	<body>
 		<h1>Use-Case</h1>
@@ -30,19 +31,7 @@
 						<td>Bad Etsy shows them an array of related products as results</td>
 					</tr>
 					<tr>
-						<td>They click on their preferred item and check out or simply favorite it</td>
-					</tr>
-					<tr>
-						<td>Bad Etsy takes their info that they entered</td>
-					</tr>
-					<tr>
-						<td>Bad Etsy processes their order</td>
-					</tr>
-					<tr>
-						<td>Bad Etsy takes their payment</td>
-					</tr>
-					<tr>
-						<td>Bad Etsy notifies seller to send them item</td>
+						<td>They click on their preferred item and favorite it</td>
 					</tr>
 				</tbody>
 			</table>

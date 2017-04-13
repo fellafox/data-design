@@ -4,14 +4,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Persona</title>
-		<style>
-			body {background-color: powderblue;}
-			h1   {color: blue;}
-			p    {color: red;}
-			table, th, tr, td {
-				border: 2px solid;
-			}
-		</style>
+		<link rel="stylesheet" href="css/style.css" type="text/css"/>
 	</head>
 	<body>
 		<h1>Persona</h1>
