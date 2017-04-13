@@ -15,7 +15,7 @@
 			<table>
 				<tbody>
 					<tr>
-						<td>Max is logged into the site using his macbook pro</td>
+						<td>Max is logged into the site using his macbook pro. He logged in by submitting a form.</td>
 					</tr>
 					<tr>
 						<td>Bad Etsy redirects him to the suggested feed from the item entity which brings up a home page</td>
