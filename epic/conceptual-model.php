@@ -20,8 +20,8 @@
 				<li>productPrice</li>
 				<li>productName</li>
 				<li>productDescription</li>
-				<li>the foreign key in the profile</li>
-				<li>the foreign key in the product</li>
+				<li>foreignKeyprofile</li>
+				<li>foreignKeyproduct</li>
 			</ol>
 			<h2>Relationships:</h2>
 			<ol>
