@@ -1,6 +1,8 @@
 body {background-color: powderblue;}
 h1   {color: darkslategrey;}
+h2   {color: darkcyan}
 p    {color: darkcyan;}
 table, th, tr, td {
 	border: 2px solid darkslategrey;
 }
+

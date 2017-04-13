@@ -9,7 +9,7 @@
 	<body>
 		<h1>Persona</h1>
 		<main>
-			<p>⦁	32 year old man who has allergies and needs natural shaving products, soaps, and natural clothing and watches. Likes kraft beer.
+			<p>⦁	23 year old man named Max who has allergies and needs natural shaving products, soaps, and natural clothing and watches. Likes kraft beer. He has decent technological knowledge as he is a student learning programming. Has a macbook pro.
 			</p>
 			<table>
 				<thead>Stats</thead>

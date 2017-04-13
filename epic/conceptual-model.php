@@ -8,14 +8,26 @@
 	<body>
 		<h1>Conceptual-Model</h1>
 		<main>
-<h2>Main Entity: Bad Etsy Item Database</h2>
+<h2>Main Entity: Profile</h2>
 			<h2>Attributes:</h2>
 			<ol>
-				<li>profileID</li>
-				<li>profileEmail</li>
-				<li>favorites item</li>
-				<li>buys item</li>
+				<li>salt</li>
+				<li>hash</li>
+				<li>validationTokein</li>
+				<li>profileId</li>
+				<li>productId</li>
+				<li>favoriteDate</li>
+				<li>productPrice</li>
+				<li>productName</li>
+				<li>productDescription</li>
+				<li>the foreign key in the profile</li>
+				<li>the foreign key in the product</li>
 			</ol>
+			<h2>Relationships:</h2>
+			<ol>
+			<li>many users can favorite many products</li>
+			<li>many products can be favorited by many users</li>
+		</ol>
 		</main>
 	</body>
 
