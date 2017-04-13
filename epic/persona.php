@@ -3,12 +3,14 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="css/style.css" type="text/css"/>
 		<title>Persona</title>
 		<style>
 			body {background-color: powderblue;}
 			h1   {color: blue;}
 			p    {color: red;}
+			table, tr, td {
+				border: 2px solid;
+			}
 		</style>
 	</head>
 	<body>
