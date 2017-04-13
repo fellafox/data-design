@@ -8,7 +8,7 @@
 	<body>
 		<h1>Use-Case</h1>
 		<main>
-<p>Use Case: a Max makes a search on the site with the intention of finding a shower item, clicks on a product and can favorite it.
+<p>Use Case: a wild Max makes a search on the site with the intention of finding a shower item, clicks on a product and favorites it.
 </p>
 			<ol>
 				<li>They are logged into the site using their macbook pro</li>
