@@ -11,10 +11,8 @@
 		<main>
 			<p>⦁	32 year old man who has allergies and needs natural shaving products, soaps, and natural clothing and watches. Likes kraft beer.
 			</p>
+			<h2>Stats</h2>
 			<table>
-					<tr>
-						<th>Stats</th>
-					</tr>
 					<tr>
 						<td>Age</td>
 						<td>32</td>
