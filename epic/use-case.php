@@ -27,10 +27,10 @@
 						<td>Bad Etsy shows them an array of related products as results</td>
 					</tr>
 					<tr>
-						<td>Max clicks on their preferred item and favorites it</td>
+						<td>Max clicks on his preferred item and favorites it</td>
 					</tr>
 					<tr>
-						<td>Bad Etsy prompts them that they have favorited the item</td>
+						<td>Bad Etsy prompts him that he has favorited the item with a pop-up</td>
 					</tr>
 				</tbody>
 			</table>
