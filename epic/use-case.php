@@ -24,7 +24,7 @@
 						<td>Max clicks on a category or item on the page through a site button</td>
 					</tr>
 					<tr>
-						<td>Bad Etsy shows them an array of related products as results</td>
+						<td>Bad Etsy shows him an array of related products as results</td>
 					</tr>
 					<tr>
 						<td>Max clicks on his preferred item and favorites it</td>
