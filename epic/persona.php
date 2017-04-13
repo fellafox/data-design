@@ -5,6 +5,11 @@
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="css/style.css" type="text/css"/>
 		<title>Persona</title>
+		<style>
+			body {background-color: powderblue;}
+			h1   {color: blue;}
+			p    {color: red;}
+		</style>
 	</head>
 	<body>
 		<h1>Persona</h1>
