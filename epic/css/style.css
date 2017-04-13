@@ -7,6 +7,12 @@ p    {color: darkcyan;}
 table, tr, td {
 	border: 2px solid darkslategrey;
 }
+img {
+	float: right;
+}
 
+img {
+	float: left;
+}
 
 

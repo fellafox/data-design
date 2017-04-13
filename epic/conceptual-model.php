@@ -34,6 +34,8 @@
 			<li>many users can favorite many products (m to n)</li>
 			<li>many products can be favorited by many users (m to n)</li>
 		</ol>
+			<img src="img/stayweird.png" alt="stayweird" style="float: left"/>
+			<img src="img/cat.png" alt="Kitty" style="float: right"/>
 		</main>
 	</body>
 
