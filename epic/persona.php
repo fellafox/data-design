@@ -16,7 +16,7 @@
 				<thead>Stats</thead>
 					<tr>
 						<td>Age</td>
-						<td>32</td>
+						<td>23</td>
 					</tr>
 					<tr>
 						<td>Gender</td>
