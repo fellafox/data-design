@@ -10,7 +10,7 @@
 		<h1>Persona</h1>
 		<main>
 			<img src="img/max.jpg" alt="Maxie">
-			<p>⦁	23 year old man named Max who has allergies and needs natural shaving products, soaps, and natural clothing and watches. Likes kraft beer. He has decent technological knowledge as he is a student learning programming. Has a macbook pro.
+			<p>⦁	23 year old man named Max who has allergies and needs natural shaving products, soaps, and natural clothing and watches. Likes kraft beer. He has decent technological knowledge as he is a student learning programming. Has a macbook pro. He often likes to browse the Bad Etsy store while on his break at work at one in the morning.
 			</p>
 			<table>
 				<thead>Stats</thead>
