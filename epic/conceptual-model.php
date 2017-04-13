@@ -16,12 +16,14 @@
 				<li>profileHash {for account password)</li>
 				<li>profileActivationToken (for account verification)</li>
 				<li>profileEmail</li>
+				<li>profileAtHandle</li>
 			</ol>
 			<h3>Product</h3>
 			<ol>
-			<li>productProfileId (primary key)</li>
 			<li>productId (primary key)</li>
 			<li>productDescription</li>
+				<li>productName</li>
+				<li>productPrice</li>
 			</ol>
 			<h3>Favorite :)</h3>
 		<ol>
