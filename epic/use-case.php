@@ -11,6 +11,7 @@
 <p>Use Story: a wild Max makes a search on the site with the intention of favoriting a specific item(s) ---> he then clicks on a product and favorites it.
 </p>
 			<p>Use Case: Max likes logging in on his macbook pro or his iphone 6 to favorite items for later. He makes decent money and doesn't always have the cash right away though so that is why he tends to favorite quite a few items. He really likes natural bath products and also loves his cat. He has an unlimited data plan and likes to take his time perusing the internet. He has even downloaded the Bad Etsy ap on his phone and remains signed in for ease of use.</p>
+			<img src="img/wildmax2.png" alt="wildmax" style="float: right"/>
 			<h2>Interaction Flow</h2>
 			<table>
 				<tbody>
