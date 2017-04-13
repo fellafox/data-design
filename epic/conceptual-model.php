@@ -23,7 +23,7 @@
 			<li>productId (primary key)</li>
 			<li>productDescription</li>
 			</ol>
-			<h3>Favorite</h3>
+			<h3>Favorite :)</h3>
 		<ol>
 			<li>favoriteProfileId (foreign key)</li>
 			<li>favoriteProductId (foreign key)</li>
