@@ -32,7 +32,7 @@
 					</tr>
 					<tr>
 						<td>Budget</td>
-						<td>Mid-range</td>
+						<td>Mid-Range</td>
 					</tr>
 			</table>
 		</main>
