@@ -31,7 +31,7 @@
 		</ol>
 			<h2>Relationships:</h2>
 			<ol>
-			<li>many users can favorite many products (m t n)</li>
+			<li>many users can favorite many products (m to n)</li>
 			<li>many products can be favorited by many users (m to n)</li>
 		</ol>
 		</main>
