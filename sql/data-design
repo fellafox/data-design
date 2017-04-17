@@ -39,7 +39,7 @@ CREATE TABLE product (
 	-- this creates an index before making a foreign key--
 	INDEX(productProfileId),
 	-- this creates the actual foreign key relation--
-	FOREIGN KEY (productProfileId) REFERENCES profile(profileId),
+	FOREIGN KEY (productProfileId) REFERENCES profile(profileId)
 		-- and finally create the primary key--
 	PRIMARY KEY(productId)
 
