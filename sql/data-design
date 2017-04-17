@@ -42,7 +42,6 @@ CREATE TABLE product (
 	FOREIGN KEY (productProfileId) REFERENCES profile(profileId),
 		-- and finally create the primary key--
 	PRIMARY KEY(productId)
-
 );
 
 -- create the favorite entity (a weak entity from an m-to-n for profile --> product--
