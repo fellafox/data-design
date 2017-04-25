@@ -39,17 +39,8 @@ class Profile implements \JsonSerializable {
 	/**
 	 * constructor for this Profile
 	 *
-	 * @param int|null $newProfileId id of this Tweet or null if a new Tweet
-	 * @param int $newTweetProfileId id of the Profile that sent this Tweet
-	 * @param string $newTweetContent string containing actual tweet data
-	 * @param \DateTime|string|null $newTweetDate date and time Tweet was sent or null if set to current date and time
-	 * @throws \InvalidArgumentException if data types are not valid
-	 * @throws \RangeException if data values are out of bounds (e.g., strings too long, negative integers)
-	 * @throws \TypeError if data types violate type hints
-	 * @throws \Exception if some other exception occurs
-	 * @Documentation https://php.net/manual/en/language.oop5.decon.php
 	 **/
-	public function _construct(?int $newProfileId, int $newProfileActivationToken, string $newProfileEmail, int $newProfileAtHandle, int $newProfileSalt, int $newProfileHash = null) {
+	public function _construct(?int $newProfileId, int $newProfileActivationToken, string $newProfileEmail, string $newProfileAtHandle, int $newProfileSalt, int $newProfileHash = null) {
 	try {
 		$this->setProfileId($newProfileId);
 		$this->setProfileActivationToken($newProfileActivationToken);
@@ -110,4 +101,108 @@ public function getProfileActivationToken() : int {
 }
 
 /**
- */
+ * mutator method for profile activation token
+ *
+ * @param int $newProfileActivationToken new value of profile activation token
+ * @throws \RangeException if $newProfileActivationToken is not positive
+ * @throws \TypeError if $newProfileActivationToken is not an integer
+ **/
+public function setProfileActivationToken(int $newProfileActivationToken) : void {
+	//verify the profileActivationToken is positive
+	if($newProfileActivationToken <= 0) {
+					throw(new \RangeException("profile activation token is not positive"));
+	}
+	//convert and store the profile activation token
+	$this->profileActivationToken = $newProfileActivationToken;
+}
+
+/**
+ * accessor method for profile email
+ *
+ * @return string value of profile email
+ **/
+public function getProfileEmail() :string {
+		return($this->profileEmail);
+}/**
+ * mutator method for profile email
+ *
+ * @param string $newProfileEmail new value of profile email
+ * @throws \InvalidArgumentException if $newProfileEmail is not a string or insecure
+ * @throws \RangeException if $newProfileEmail is > 140 characters
+ * @throws \TypeError if $newProfileEmail is not a string
+ **/
+public function setProfileEmail(string $newProfileEmail) : void {
+	//verify the profile email is secure
+	$newProfileEmail = trim($newProfileEmail);
+	$newProfileEmail = filter_var($newProfileEmail, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES)
+	if(empty($newProfileEmail) === true) {
+		throw(new \InvalidArgumentException("profile email is empty or insecure"));
+	}
+	// verify the profile email will fit in the database
+	if(strlen($newProfileEmail) > 60) {
+		throw(new \RangeException("profile email too large"));
+	}
+//store the profile email
+	$this->profileEmail = $newProfileEmail;
+}
+
+/**
+ * accessor method for profile at handle
+ *
+ * @return string value of profile at handle
+ **/
+public function getProfileAtHandle() : string {
+	return ($this->profileAtHandle);
+}
+
+ /**
+  * mutator method for profile at handle
+  *
+  * @param string $newProfileAtHandle new value of profile at handle
+  * @throws \RangeException if $newProfileAtHandle is > 4 characters
+  **/
+ public function setProfileAtHandle(string $newProfileAtHandle) : void {
+ 	//if profile at handle is null immediately return it
+	if($newProfileAtHandle === null) {
+				$this->profileAtHandle = null;
+				return;
+	}
+	//verify the profile at handle is minimum four characters
+	if(strlen($newProfileAtHandle) < 4) {
+			throw(new \RangeException("profile at handle is too short"));
+	}
+	//convert and store the profile at handle
+	$this->profileAtHandle = $newProfileAtHandle;
+ }
+
+ /**
+  * accessor method for profile salt
+  *
+  **/
+ private function setProfileSalt() : int {
+ 			return($this->profileSalt);
+}
+
+/**
+ * mutator method for profile salt
+ *
+ **/
+private function setProfileSalt(int $newProfileSalt) : void {
+
+}
+
+/**
+ * accesor method for profile hash
+
+ **/
+private function setProfileHash() : int {
+			return($this->profileHash);
+}
+
+/**
+ * mutator method for profile hash
+ *
+ **/
+private function setProfileHash(int $newProfileHash) : void {
+
+}
