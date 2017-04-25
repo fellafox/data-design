@@ -3,13 +3,28 @@ namespace Edu\Cnm\DataDesign;
 require_once ("autoload.php");
 **/
 class Product implements \JsonSerializable {
-	use \Edu\Cnm\DataDesign\ValidateDate;
+	use ValidateDate;
 	/**
 	 * id for this Product; this is the primary key
-	 * @var int $profileId
+	 * @var int $productIdId
 	 **/
 	private $productId;
 	/**
-	 * id of the Product that sent this
+	 * Description of the product
+	 * @var string $productDescription
+	 **/
+	private $productDescription;
+	/**
+	 * profile id of the product that has been favorited
+	 * @var int $productProfileId
+	 **/
+	private $productProfileId;
+	/**
+	 * date of the product
+	 * @var string $productDate
+	 **/
+	private $productDate;
+	/**
+
 	 */
 }

@@ -32,5 +32,7 @@ class Profile implements \JsonSerializable {
 	/**
 	 * hash for the account password
 	 * @var int $productHash;
-	 */
+	 **/
+	private $profileHash;
+	**/
 }
