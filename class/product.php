@@ -10,6 +10,6 @@ class Product implements \JsonSerializable {
 	 **/
 	private $productId;
 	/**
-	 * id of the Product that sent this
+	 * id of the Product that sent this yes
 	 */
 }
