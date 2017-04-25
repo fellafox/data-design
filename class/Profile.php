@@ -92,3 +92,22 @@ class Profile implements \JsonSerializable {
 					return;
 }
 	 //verify the profile id is positive
+	if($newProfileId <= 0) {
+		throw(new \RangeException("profile id is not positive"));
+	}
+	// convert snd store the profile id
+	$this->profileId = $newTweetId;
+
+}
+
+/**
+ * accessor method for profile activation token
+ *
+ * @return int value of profile activation token
+ **/
+public function getProfileActivationToken() : int {
+	return($this->profileActivationToken);
+}
+
+/**
+ */
