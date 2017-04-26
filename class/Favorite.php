@@ -116,17 +116,16 @@ public function getFavoriteDate() : \DateTime {
  **/
 public function setFavoriteDate($newFavoriteDate = null) : void {
 	// base case: if the date is null, use the current date and time
-	if($newTweetDate === null) {
-		$this->tweetDate = new \DateTime();
+	if($newFavoriteDate === null) {
+		$this->favoriteDate = new \DateTime();
 		return;
 	}
 	// store the like date using the ValidateDate trait
 	try {
-		$newTweetDate = self::validateDateTime($newTweetDate);
+		$newFavoriteDate = self::validateDateTime($newFavoriteDate);
 	} catch(\InvalidArgumentException | \RangeException $exception) {
 		$exceptionType = get_class($exception);
 		throw(new $exceptionType($exception->getMessage(), 0, $exception));
 	}
-	$this->tweetDate = $newTweetDate;
-}
+	$this->favoriteDate = $newFavoriteDate;
 }
