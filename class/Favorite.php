@@ -129,3 +129,22 @@ public function setFavoriteDate($newFavoriteDate = null) : void {
 	}
 	$this->favoriteDate = $newFavoriteDate;
 }
+/**
+ * deletes this Favorite from mySQL
+ *
+ * @param \PDO $pdo PDO connection object
+ * @throws \PDOException when mySQL related errors occur
+ * @throws \TypeError if $pdo is not a PDO connection object
+ **/
+public function delete(\PDO $pdo) : void {
+	// enforce the favoriteProductId is not null (i.e., don't delete a tweet that hasn't been inserted)
+	if($this->tweetId === null) {
+		throw(new \PDOException("unable to delete a tweet that does not exist"));
+	}
+	// create query template
+	$query = "DELETE FROM favorite WHERE favoriteProductId = :favoriteProductId";
+	$statement = $pdo->prepare($query);
+	// bind the member variables to the place holder in the template
+	$parameters = ["favoriteProductId" => $this->favoriteProductId];
+	$statement->execute($parameters);
+}
