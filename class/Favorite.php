@@ -130,6 +130,28 @@ public function setFavoriteDate($newFavoriteDate = null) : void {
 	$this->favoriteDate = $newFavoriteDate;
 }
 /**
+ * inserts this Favorite into mySQL
+ *
+ * @param \PDO $pdo PDO connection object
+ * @throws \PDOException when mySQL related errors occur
+ * @throws \TypeError if $pdo is not a PDO connection object
+ **/
+public function insert(\PDO $pdo) : void {
+	// enforce the favoriteProductId is null (i.e., don't insert a favorite that already exists)
+	if($this->favoriteProductId !== null) {
+		throw(new \PDOException("not a new favorite"));
+	}
+	// create query template
+	$query = "INSERT INTO favorite(favoriteProfileId, favoriteProductId, favoriteDate) VALUES(:tweetProfileId, :tweetContent, :tweetDate)";
+	$statement = $pdo->prepare($query);
+	// bind the member variables to the place holders in the template
+	$formattedDate = $this->favoriteDate->format("Y-m-d H:i:s.u");
+	$parameters = ["favoriteProfileId" => $this->favoriteProfileId, "favoriteProductId" => $this->favoriteProductId, "favoriteDate" => $formattedDate];
+	$statement->execute($parameters);
+	// update the null favoriteProductId with what mySQL just gave us
+	$this->favoriteProductIdId = intval($pdo->lastInsertId());
+}
+/**
  * deletes this Favorite from mySQL
  *
  * @param \PDO $pdo PDO connection object
@@ -148,3 +170,96 @@ public function delete(\PDO $pdo) : void {
 	$parameters = ["favoriteProductId" => $this->favoriteProductId];
 	$statement->execute($parameters);
 }
+/**
+ * updates this Favorite in mySQL
+ *
+ * @param \PDO $pdo PDO connection object
+ * @throws \PDOException when mySQL related errors occur
+ * @throws \TypeError if $pdo is not a PDO connection object
+ **/
+public function update(\PDO $pdo) : void {
+	// enforce the favoriteProductId is not null (i.e., don't update a favorite that hasn't been inserted)
+	if($this->favoriteProductId === null) {
+		throw(new \PDOException("unable to update a favorite that does not exist"));
+	}
+	// create query template
+	$query = "UPDATE favorite SET favoriteProfileId = :favoriteProfileId, favoriteProductId = :favoriteProductId, favoriteDate = :favoriteDate WHERE favoriteProductId = :favoriteProductId";
+	$statement = $pdo->prepare($query);
+	// bind the member variables to the place holders in the template
+	$formattedDate = $this->favoriteDate->format("Y-m-d H:i:s.u");
+	$parameters = ["favoriteProfileId" => $this->favoriteProfileId, "favoriteProductId" => $this->favoriteProductId, "favoriteDate" => $formattedDate, "favoriteProductId" => $this->favoriteProductId];
+	$statement->execute($parameters);
+}
+/**
+ * gets a Favorite by favoriteProductId
+ *
+ * @param \PDO $pdo PDO connection object
+ * @param int $favoriteProductId favorite id to search for
+ * @return Favorite|null Favorite found or null if not found
+ * @throws \PDOException when mySQL related errors occur
+ * @throws \TypeError when variables are not the correct data type
+ **/
+public static function getFavoriteByFavoriteProductId(\PDO $pdo, int $favoriteProductId) : ?Favorite {
+	// sanitize the tweetId before searching
+	if($favoriteProductId <= 0) {
+		throw(new \PDOException("favorite id is not positive"));
+	}
+	// create query template
+	$query = "SELECT favoriteProductId, favoriteProfileId, favoriteDate FROM favorite WHERE favoriteProductId = :favoriteProductId";
+	$statement = $pdo->prepare($query);
+	// bind the tweet id to the place holder in the template
+	$parameters = ["favoriteProductId" => $favoriteProductId];
+	$statement->execute($parameters);
+	// grab the favorite from mySQL
+	try {
+		$favorite = null;
+		$statement->setFetchMode(\PDO::FETCH_ASSOC);
+		$row = $statement->fetch();
+		if($row !== false) {
+			$favorite = new Favorite($row["favoriteProductId"], $row["favoriteProfileId"], $row["favoriteProductId"], $row["favoriteDate"]);
+		}
+	} catch(\Exception $exception) {
+		// if the row couldn't be converted, rethrow it
+		throw(new \PDOException($exception->getMessage(), 0, $exception));
+	}
+	return($favorite);
+}
+	//sanitize input
+	$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+		$favoriteProfileId = filter_input(INPUT_GET, "favoriteProfileId", FILTER_VALIDATE_INT);
+		$favoriteProductId = filter_input(INPUT_GET, "favoriteProductId", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+
+		//make sure the id is valid for methods that require it
+		if(($method === "DELETE" || $method === "PUT") && (empty($id) === true || $id < 0)) {
+			throw (new \InvalidArgumentException("id cannot be empty or negative", 405));
+		}
+// handle GET request - if id is present, that favorite is returned, otherwise all favorites are returned
+	if($method === "GET") {
+		//set XSRF cookie
+		setXsrfCookie();
+
+			//get a specific favorite or all favorites and update reply
+			if(empty($id) === false) {
+				$favorite = Favorite::getFavoriteByFavoriteId ($pdo, $id);
+				if($favorite !== null){
+					$reply->data = $favorite;
+				}
+	} else if (empty($favoriteProfileId) === false){
+				$favorite = Favorite::getFavoriteByFavoriteProfileId(
+					$pdo, $favoriteProfileId)->toArray();
+								if($favorite !== null) {
+									$reply->data = $favorite;
+								}
+								} else if(empty($favoriteProductId) === false) {
+									$favorites = Favorite::getFavoriteByFavoriteProductId ($pdo, $favoriteProductId)->toArray();
+									if($favorites !=== null) {
+										$reply->data = $favorites;
+									}
+									} else {
+										$favorites = Favorite::getAllFavorites($pdo)->toArray();
+										if($favorites !== null) {
+											$reply->data = $favorites;
+										}
+										}
+			} elseif($method === "PUT" || $method === "POST")
+	{
